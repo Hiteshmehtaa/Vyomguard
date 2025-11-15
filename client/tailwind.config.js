@@ -1,0 +1,25 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        charcoal: '#2C3E50',
+        'charcoal-light': '#34495E',
+        'charcoal-dark': '#1C2833',
+        orange: '#ff7b00',
+        'orange-light': '#ff9933',
+        'orange-dark': '#cc6200',
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
