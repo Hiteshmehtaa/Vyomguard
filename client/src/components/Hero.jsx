@@ -33,17 +33,72 @@ const Hero = () => {
     }
   };
 
-  const wordVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
+  // Generate random delays for each letter
+  const [randomDelays] = React.useState(() => {
+    const text = 'NEXT GENERATION AERIAL DOMINANCE';
+    const letters = text.replace(/ /g, '').length;
+    const delays = Array.from({ length: letters }, (_, i) => i);
+    
+    // Shuffle the delays array for random order
+    for (let i = delays.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [delays[i], delays[j]] = [delays[j], delays[i]];
+    }
+    return delays;
+  });
+
+  const letterVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 50,
+      rotateX: -90,
+      scale: 0.5
+    },
+    visible: (delay) => ({
+      opacity: [0, 0, 1, 0.3, 1, 0.5, 1],
       y: 0,
+      rotateX: 0,
+      scale: 1,
       transition: {
-        delay: i * 0.15,
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1]
+        delay: delay * 0.04,
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+        opacity: {
+          duration: 0.8,
+          times: [0, 0.1, 0.3, 0.5, 0.7, 0.85, 1]
+        }
       }
     })
+  };
+
+  // Split text into individual letters with random delays
+  const animateText = (text, delayOffset = 0) => {
+    let letterIndex = 0;
+    return text.split('').map((char, index) => {
+      if (char === ' ') {
+        return (
+          <span key={index} className="inline-block" style={{ minWidth: '0.5em' }}>
+            {'\u00A0'}
+          </span>
+        );
+      }
+      
+      const delay = randomDelays[delayOffset + letterIndex];
+      letterIndex++;
+      
+      return (
+        <motion.span
+          key={index}
+          custom={delay}
+          variants={letterVariants}
+          initial="hidden"
+          animate="visible"
+          className="inline-block"
+        >
+          {char}
+        </motion.span>
+      );
+    });
   };
 
   return (
@@ -102,41 +157,29 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 max-w-7xl">
         <div className="max-w-6xl mx-auto">
-          {/* Animated Main Headline - Word by Word */}
+          {/* Animated Main Headline - Letter by Letter */}
           <div className="mb-8 overflow-hidden">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              className="text-center"
-            >
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-3">
-                {['REVOLUTIONIZING'].map((word, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i}
-                    variants={wordVariants}
-                    className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins text-white tracking-tight uppercase"
+            <div className="text-center">
+              <div className="mb-3">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins text-white tracking-tight uppercase"
                     style={{
-                      textShadow: '0 0 15px rgba(0, 255, 255, 0.25), 0 0 30px rgba(0, 200, 255, 0.15)'
-                    }}
-                  >
-                    {word}
-                  </motion.span>
-                ))}
+                      textShadow: '0 0 15px rgba(0, 255, 255, 0.25), 0 0 30px rgba(0, 200, 255, 0.15)',
+                      perspective: '1000px'
+                    }}>
+                  {animateText('NEXT GENERATION', 0)}
+                </h1>
               </div>
               <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-                {['UNMANNED', 'AVIATION'].map((word, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i + 1}
-                    variants={wordVariants}
-                    className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins gradient-text-glow tracking-tight uppercase"
-                  >
-                    {word}
-                  </motion.span>
-                ))}
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins gradient-text-glow tracking-tight uppercase"
+                    style={{ perspective: '1000px' }}>
+                  {animateText('AERIAL', 16)}
+                </h1>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins gradient-text-glow tracking-tight uppercase"
+                    style={{ perspective: '1000px' }}>
+                  {animateText('DOMINANCE', 22)}
+                </h1>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Subtitle with Reveal Animation */}
