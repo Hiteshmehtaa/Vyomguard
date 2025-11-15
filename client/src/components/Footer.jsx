@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black border-t border-orange border-opacity-20 py-16 px-6 relative overflow-hidden">
+    <footer className="bg-black border-t border-cyan-500 border-opacity-20 py-16 px-6 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 futuristic-grid"></div>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-orange transition-colors text-sm"
+                    className="text-gray-400 hover:text-cyan-400 transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                   href={social.href}
                   aria-label={social.label}
                   whileHover={{ scale: 1.2, y: -5 }}
-                  className="w-10 h-10 bg-charcoal border border-gray-700 hover:border-orange rounded-lg flex items-center justify-center text-gray-400 hover:text-orange transition-all"
+                  className="w-10 h-10 bg-charcoal border border-gray-700 hover:border-cyan-500 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all"
                 >
                   {social.icon}
                 </motion.a>
@@ -107,3 +107,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+

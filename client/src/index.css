@@ -23,18 +23,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ff7b00 0%, #ff9933 100%);
+  background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-glow {
-  background: linear-gradient(135deg, #ff7b00 0%, #ff9933 100%);
+  background: linear-gradient(135deg, #00ffff 0%, #00ccff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(255, 123, 0, 0.6));
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.3));
 }
 
 html {
@@ -44,8 +44,8 @@ html {
 /* Futuristic Grid Animation */
 .futuristic-grid {
   background-image: 
-    linear-gradient(rgba(255, 123, 0, 0.1) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 123, 0, 0.1) 2px, transparent 2px);
+    linear-gradient(rgba(0, 200, 255, 0.1) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(0, 200, 255, 0.1) 2px, transparent 2px);
   background-size: 100px 100px;
   animation: gridMove 20s linear infinite;
 }
@@ -64,7 +64,7 @@ html {
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(255, 123, 0, 0.03) 51%
+    rgba(0, 200, 255, 0.03) 51%
   );
   background-size: 100% 4px;
   animation: scanlines 8s linear infinite;
@@ -111,6 +111,6 @@ html {
   }
   
   .text-shadow-glow {
-    text-shadow: 0 0 20px rgba(255, 123, 0, 0.6), 0 0 40px rgba(255, 123, 0, 0.4);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3), 0 0 20px rgba(0, 200, 255, 0.2);
   }
 }

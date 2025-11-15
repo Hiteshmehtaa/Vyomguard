@@ -74,11 +74,11 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-gray-900 to-black border-2 border-orange border-opacity-20 p-8 relative overflow-hidden"
+            className="bg-gradient-to-br from-gray-900 to-black border-2 border-cyan-500 border-opacity-20 p-8 relative overflow-hidden"
           >
             {/* Corner Accents */}
-            <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-orange opacity-30"></div>
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-orange opacity-30"></div>
+            <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-cyan-500 opacity-30"></div>
+            <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-cyan-500 opacity-30"></div>
             
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div>
@@ -92,7 +92,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-orange text-white transition-colors"
+                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-cyan-500 text-white transition-colors"
                   placeholder="Your name"
                 />
               </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-orange text-white transition-colors"
+                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-cyan-500 text-white transition-colors"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-orange text-white transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-black border-2 border-gray-700 focus:outline-none focus:border-cyan-500 text-white transition-colors resize-none"
                   placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
@@ -146,7 +146,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-4 bg-orange hover:bg-orange-light text-white font-bold uppercase tracking-wider text-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-4 bg-cyan-500 hover:bg-cyan-400 text-white font-bold uppercase tracking-wider text-lg transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 <FaPaperPlane />
@@ -175,12 +175,12 @@ const Contact = () => {
               <motion.div
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 border-2 border-orange flex items-center justify-center flex-shrink-0">
-                  <FaEnvelope className="text-orange text-xl" />
+                <div className="w-12 h-12 border-2 border-cyan-500 flex items-center justify-center flex-shrink-0">
+                  <FaEnvelope className="text-cyan-400 text-xl" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 uppercase text-sm">Email</h4>
-                  <a href="mailto:info@vyomgarud.com" className="text-gray-400 hover:text-orange transition-colors">
+                  <a href="mailto:info@vyomgarud.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     info@vyomgarud.com
                   </a>
                 </div>
@@ -189,12 +189,12 @@ const Contact = () => {
               <motion.div
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 border-2 border-orange flex items-center justify-center flex-shrink-0">
-                  <FaPhone className="text-orange text-xl" />
+                <div className="w-12 h-12 border-2 border-cyan-500 flex items-center justify-center flex-shrink-0">
+                  <FaPhone className="text-cyan-400 text-xl" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 uppercase text-sm">Phone</h4>
-                  <a href="tel:+918881444693" className="text-gray-400 hover:text-orange transition-colors">
+                  <a href="tel:+918881444693" className="text-gray-400 hover:text-cyan-400 transition-colors">
                     +91 8881444693
                   </a>
                 </div>
@@ -203,8 +203,8 @@ const Contact = () => {
               <motion.div
                 className="flex items-start space-x-4"
               >
-                <div className="w-12 h-12 border-2 border-orange flex items-center justify-center flex-shrink-0">
-                  <FaMapMarkerAlt className="text-orange text-xl" />
+                <div className="w-12 h-12 border-2 border-cyan-500 flex items-center justify-center flex-shrink-0">
+                  <FaMapMarkerAlt className="text-cyan-400 text-xl" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1 uppercase text-sm">Location</h4>
@@ -216,7 +216,7 @@ const Contact = () => {
               </motion.div>
             </div>
 
-            <div className="pt-8 border-t border-orange border-opacity-30">
+            <div className="pt-8 border-t border-cyan-500 border-opacity-30">
               <h4 className="text-white font-semibold mb-4 uppercase text-sm">Key Benefits</h4>
               <div className="space-y-2 text-gray-400">
                 <p>✓ 680+ networks in 180+ countries</p>

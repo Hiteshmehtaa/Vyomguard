@@ -13,6 +13,10 @@ export default {
         orange: '#ff7b00',
         'orange-light': '#ff9933',
         'orange-dark': '#cc6200',
+        // New cyan/blue theme
+        'cyber-cyan': '#00ffff',
+        'cyber-blue': '#00d4ff',
+        'tech-blue': '#0099ff',
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],

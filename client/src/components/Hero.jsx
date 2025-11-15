@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
+import AnimatedBackground from './AnimatedBackground';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -57,25 +58,24 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-drone-flying-over-a-forest-50649-large.mp4" type="video/mp4" />
+          <source src="/1851190-uhd_3840_2160_25fps.mp4" type="video/mp4" />
         </video>
-        
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-60"></div>
       </div>
 
-      {/* Animated Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 futuristic-grid"></div>
+      {/* Animated Particle Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <AnimatedBackground />
+        
+        {/* Light overlay for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50" />
       </div>
 
       {/* Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-orange blur-3xl"
+            className="absolute rounded-full bg-cyan-400 blur-3xl"
             style={{
               width: `${Math.random() * 300 + 100}px`,
               height: `${Math.random() * 300 + 100}px`,
@@ -85,10 +85,10 @@ const Hero = () => {
             animate={{
               x: [0, Math.random() * 100 - 50],
               y: [0, Math.random() * 100 - 50],
-              opacity: [0.1, 0.2, 0.1],
+              opacity: [0.05, 0.15, 0.05],
             }}
             transition={{
-              duration: 10 + Math.random() * 10,
+              duration: 15 + Math.random() * 10,
               repeat: Infinity,
               ease: "linear"
             }}
@@ -117,7 +117,7 @@ const Hero = () => {
                     variants={wordVariants}
                     className="text-4xl md:text-6xl lg:text-7xl font-black font-poppins text-white tracking-tight uppercase"
                     style={{
-                      textShadow: '0 0 30px rgba(255, 123, 0, 0.5), 0 0 60px rgba(255, 123, 0, 0.3)'
+                      textShadow: '0 0 15px rgba(0, 255, 255, 0.25), 0 0 30px rgba(0, 200, 255, 0.15)'
                     }}
                   >
                     {word}
@@ -152,7 +152,7 @@ const Hero = () => {
                 Pushing the boundaries of what's possible in the skies through relentless pursuit of cutting-edge research
               </p>
               <motion.div
-                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-orange to-transparent"
+                className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
                 transition={{ delay: 1.2, duration: 1 }}
@@ -170,13 +170,13 @@ const Hero = () => {
           >
             <motion.a
               href="#capabilities"
-              className="group relative px-12 py-5 bg-orange text-white font-bold text-lg overflow-hidden rounded-sm uppercase tracking-wider"
+              className="group relative px-12 py-5 bg-cyan-600 text-white font-bold text-lg overflow-hidden rounded-sm uppercase tracking-wider"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10">Our Vision</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-orange-light to-orange-dark"
+                className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -212,15 +212,15 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.8 + i * 0.1 }}
               >
-                <div className="text-center p-4 border border-orange border-opacity-30 bg-black bg-opacity-40 backdrop-blur-sm hover:border-opacity-100 transition-all duration-300">
-                  <div className="text-2xl md:text-3xl font-bold text-orange mb-1 font-mono">
+                <div className="text-center p-4 border border-cyan-500 border-opacity-30 bg-black/60 backdrop-blur-sm hover:border-opacity-100 transition-all duration-300">
+                  <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-1 font-mono">
                     {stat.value}
                   </div>
                   <div className="text-xs text-gray-400 uppercase tracking-widest">
                     {stat.label}
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-orange opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-cyan-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               </motion.div>
             ))}
           </motion.div>

@@ -35,19 +35,43 @@ const Navbar = () => {
     {
       name: 'Product',
       dropdown: [
-        { name: 'UAV Systems', href: '#capabilities' },
-        { name: 'Surveillance Tech', href: '#capabilities' },
-        { name: 'Defense Solutions', href: '#capabilities' },
-        { name: 'Autonomous Systems', href: '#capabilities' }
+        {
+          category: 'UAV Systems',
+          items: [
+            { name: 'Surveillance Drones', desc: 'Advanced aerial monitoring', href: '#capabilities' },
+            { name: 'Combat UAVs', desc: 'Military-grade systems', href: '#capabilities' },
+            { name: 'Cargo Drones', desc: 'Heavy payload delivery', href: '#capabilities' }
+          ]
+        },
+        {
+          category: 'Technology',
+          items: [
+            { name: 'AI Navigation', desc: 'Autonomous flight systems', href: '#capabilities' },
+            { name: 'Sensor Suite', desc: 'Multi-spectrum detection', href: '#capabilities' },
+            { name: 'Communication', desc: 'Encrypted data links', href: '#capabilities' }
+          ]
+        }
       ]
     },
     { name: 'About', href: '#about' },
     {
       name: 'Resources',
       dropdown: [
-        { name: 'Documentation', href: '#contact' },
-        { name: 'Case Studies', href: '#highlights' },
-        { name: 'Support', href: '#contact' }
+        {
+          category: 'Learn',
+          items: [
+            { name: 'Documentation', desc: 'Technical guides', href: '#contact' },
+            { name: 'Case Studies', desc: 'Success stories', href: '#highlights' },
+            { name: 'Testimonials', desc: 'Client reviews', href: '#testimonials' }
+          ]
+        },
+        {
+          category: 'Support',
+          items: [
+            { name: 'FAQ', desc: 'Common questions', href: '#faq' },
+            { name: 'Contact', desc: 'Get in touch', href: '#contact' }
+          ]
+        }
       ]
     },
     { name: 'Contact', href: '#contact' }
@@ -60,8 +84,8 @@ const Navbar = () => {
       transition={{ duration: 0.3, ease: 'easeInOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black bg-opacity-80 backdrop-blur-md border-b border-orange border-opacity-20' 
-          : 'bg-transparent'
+          ? 'bg-black bg-opacity-95 backdrop-blur-md border-b border-cyan-500 border-opacity-20 shadow-lg' 
+          : 'bg-black bg-opacity-80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
@@ -87,7 +111,7 @@ const Navbar = () => {
               >
                 {link.dropdown ? (
                   <>
-                    <button className="flex items-center space-x-1 text-gray-300 hover:text-orange transition-colors font-medium uppercase text-sm tracking-wider">
+                    <button className="flex items-center space-x-1 text-gray-300 hover:text-cyan-400 transition-colors font-medium uppercase text-sm tracking-wider">
                       <span>{link.name}</span>
                       <FaChevronDown className="text-xs" />
                     </button>
@@ -98,17 +122,39 @@ const Navbar = () => {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-black border border-orange border-opacity-30 shadow-2xl"
+                                            className="absolute top-full right-0 mt-2 w-[600px] bg-gradient-to-br from-gray-900 to-black backdrop-blur-xl border-2 border-cyan-500 border-opacity-30 shadow-2xl p-8 z-50"
                         >
-                          {link.dropdown.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="block px-6 py-3 text-gray-300 hover:text-white hover:bg-orange hover:bg-opacity-20 transition-all duration-200 text-sm"
-                            >
-                              {item.name}
-                            </a>
-                          ))}
+                          {/* Decorative elements */}
+                          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+                          
+                          <div className="grid grid-cols-2 gap-8 p-8">
+                            {link.dropdown.map((column, colIndex) => (
+                              <div key={colIndex} className="space-y-4">
+                                <h3 className="text-cyan-400 font-bold text-sm uppercase tracking-wider mb-4 pb-2 border-b border-cyan-500 border-opacity-30">
+                                  {column.category}
+                                </h3>
+                                <div className="space-y-2">
+                                  {column.items.map((item, itemIndex) => (
+                                    <a
+                                      key={itemIndex}
+                                      href={item.href}
+                                      className="group block p-3 rounded-md hover:bg-cyan-500 hover:bg-opacity-10 transition-all duration-200"
+                                    >
+                                      <div className="text-white text-sm font-semibold mb-0.5 group-hover:text-cyan-400 transition-colors">
+                                        {item.name}
+                                      </div>
+                                      <div className="text-gray-400 text-xs">
+                                        {item.desc}
+                                      </div>
+                                    </a>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          
+                          {/* Bottom gradient */}
+                          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -116,7 +162,7 @@ const Navbar = () => {
                 ) : (
                   <motion.a
                     href={link.href}
-                    className="text-gray-300 hover:text-orange transition-colors font-medium uppercase text-sm tracking-wider"
+                    className="text-gray-300 hover:text-cyan-400 transition-colors font-medium uppercase text-sm tracking-wider"
                     whileHover={{ y: -2 }}
                   >
                     {link.name}
@@ -126,7 +172,7 @@ const Navbar = () => {
             ))}
             <motion.a
               href="#contact"
-              className="px-6 py-2 bg-orange text-white font-semibold text-sm uppercase tracking-wider hover:bg-orange-light transition-all duration-300"
+              className="px-6 py-2 bg-cyan-500 text-white font-semibold text-sm uppercase tracking-wider hover:bg-cyan-400 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -155,7 +201,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block py-3 text-gray-300 hover:text-orange transition-colors font-medium uppercase text-sm tracking-wider"
+                className="block py-3 text-gray-300 hover:text-cyan-400 transition-colors font-medium uppercase text-sm tracking-wider"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -163,7 +209,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="block mt-4 px-6 py-3 bg-orange text-white font-semibold text-sm uppercase tracking-wider text-center hover:bg-orange-light transition-all duration-300"
+              className="block mt-4 px-6 py-3 bg-cyan-500 text-white font-semibold text-sm uppercase tracking-wider text-center hover:bg-cyan-400 transition-all duration-300"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Started

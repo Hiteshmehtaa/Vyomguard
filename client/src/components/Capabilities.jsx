@@ -63,14 +63,14 @@ const Capabilities = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative bg-gradient-to-br from-gray-900 to-black border-2 border-orange border-opacity-20 hover:border-opacity-100 p-8 lg:p-10 transition-all duration-500 overflow-hidden"
+              className="group relative bg-gradient-to-br from-gray-900 to-black border-2 border-cyan-500 border-opacity-20 hover:border-opacity-100 p-8 lg:p-10 transition-all duration-500 overflow-hidden"
             >
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-orange opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-cyan-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
               
               {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-orange opacity-50"></div>
-              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-orange opacity-50"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-cyan-500 opacity-50"></div>
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-cyan-500 opacity-50"></div>
               
               <div className="relative z-10">
                 <div className="flex items-start space-x-6">
@@ -78,10 +78,10 @@ const Capabilities = () => {
                     className="flex-shrink-0"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <div className="w-16 h-16 border-2 border-orange flex items-center justify-center text-orange text-3xl relative overflow-hidden group">
+                    <div className="w-16 h-16 border-2 border-cyan-500 flex items-center justify-center text-cyan-400 text-3xl relative overflow-hidden group">
                       {capability.icon}
                       <motion.div
-                        className="absolute inset-0 bg-orange"
+                        className="absolute inset-0 bg-cyan-500"
                         initial={{ y: '100%' }}
                         whileHover={{ y: 0 }}
                         transition={{ duration: 0.3 }}
@@ -90,7 +90,7 @@ const Capabilities = () => {
                     </div>
                   </motion.div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold font-poppins text-white mb-3 uppercase tracking-wide group-hover:text-orange transition-colors">
+                    <h3 className="text-2xl font-bold font-poppins text-white mb-3 uppercase tracking-wide group-hover:text-cyan-400 transition-colors">
                       {capability.title}
                     </h3>
                     <p className="text-gray-400 leading-relaxed text-base group-hover:text-gray-300 transition-colors">
@@ -102,7 +102,7 @@ const Capabilities = () => {
 
               {/* Scan Line Effect on Hover */}
               <motion.div
-                className="absolute inset-0 h-1 bg-gradient-to-r from-transparent via-orange to-transparent opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-0 group-hover:opacity-100"
                 initial={{ y: '-100%' }}
                 whileHover={{ y: '200%' }}
                 transition={{ duration: 1.5, repeat: Infinity }}

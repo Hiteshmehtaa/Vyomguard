@@ -13,7 +13,7 @@ const About = () => {
       {Array.from({ length: 30 }, (_, i) => (
         <motion.div
           key={`about-particle-${i}-${Math.random()}`}
-          className="absolute w-1 h-1 bg-orange rounded-full"
+          className="absolute w-1 h-1 bg-cyan-500 rounded-full"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -70,19 +70,19 @@ const About = () => {
           >
             <div className="mb-6 relative">
               <motion.div 
-                className="w-20 h-20 mx-auto mb-6 border-2 border-orange flex items-center justify-center relative overflow-hidden"
+                className="w-20 h-20 mx-auto mb-6 border-2 border-cyan-500 flex items-center justify-center relative overflow-hidden"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <span className="text-orange text-3xl font-black">01</span>
+                <span className="text-cyan-400 text-3xl font-black">01</span>
                 <motion.div
-                  className="absolute inset-0 bg-orange"
+                  className="absolute inset-0 bg-cyan-500"
                   initial={{ y: '100%' }}
                   whileHover={{ y: 0 }}
                   transition={{ duration: 0.3 }}
                   style={{ opacity: 0.1 }}
                 />
               </motion.div>
-              <div className="w-16 h-1 bg-orange mx-auto mb-4"></div>
+              <div className="w-16 h-1 bg-cyan-500 mx-auto mb-4"></div>
               <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wider">
                 Breaking the Mould
               </h3>
@@ -101,19 +101,19 @@ const About = () => {
           >
             <div className="mb-6 relative">
               <motion.div 
-                className="w-20 h-20 mx-auto mb-6 border-2 border-orange flex items-center justify-center relative overflow-hidden"
+                className="w-20 h-20 mx-auto mb-6 border-2 border-cyan-500 flex items-center justify-center relative overflow-hidden"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <span className="text-orange text-3xl font-black">02</span>
+                <span className="text-cyan-400 text-3xl font-black">02</span>
                 <motion.div
-                  className="absolute inset-0 bg-orange"
+                  className="absolute inset-0 bg-cyan-500"
                   initial={{ y: '100%' }}
                   whileHover={{ y: 0 }}
                   transition={{ duration: 0.3 }}
                   style={{ opacity: 0.1 }}
                 />
               </motion.div>
-              <div className="w-16 h-1 bg-orange mx-auto mb-4"></div>
+              <div className="w-16 h-1 bg-cyan-500 mx-auto mb-4"></div>
               <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wider">
                 No Shortcuts
               </h3>
@@ -132,19 +132,19 @@ const About = () => {
           >
             <div className="mb-6 relative">
               <motion.div 
-                className="w-20 h-20 mx-auto mb-6 border-2 border-orange flex items-center justify-center relative overflow-hidden"
+                className="w-20 h-20 mx-auto mb-6 border-2 border-cyan-500 flex items-center justify-center relative overflow-hidden"
                 whileHover={{ scale: 1.1, rotate: 5 }}
               >
-                <span className="text-orange text-3xl font-black">03</span>
+                <span className="text-cyan-400 text-3xl font-black">03</span>
                 <motion.div
-                  className="absolute inset-0 bg-orange"
+                  className="absolute inset-0 bg-cyan-500"
                   initial={{ y: '100%' }}
                   whileHover={{ y: 0 }}
                   transition={{ duration: 0.3 }}
                   style={{ opacity: 0.1 }}
                 />
               </motion.div>
-              <div className="w-16 h-1 bg-orange mx-auto mb-4"></div>
+              <div className="w-16 h-1 bg-cyan-500 mx-auto mb-4"></div>
               <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wider">
                 End to End Mastery
               </h3>

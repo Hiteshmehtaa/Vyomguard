@@ -15,7 +15,7 @@ const TrustedBy = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-black via-black to-gray-900 overflow-hidden relative">
+        <section className="py-20 px-6 bg-gradient-to-b from-black via-black to-gray-900 overflow-hidden relative">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 futuristic-grid"></div>
@@ -56,7 +56,7 @@ const TrustedBy = () => {
                 className="flex-shrink-0 group cursor-default"
               >
                 <div className="flex items-center justify-center h-16 min-w-[120px]">
-                  <span className="text-2xl font-bold text-white group-hover:text-orange transition-colors duration-300 font-poppins tracking-wider whitespace-nowrap">
+                  <span className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 font-poppins tracking-wider whitespace-nowrap">
                     {logo.text}
                   </span>
                 </div>

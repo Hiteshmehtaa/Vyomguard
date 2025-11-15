@@ -53,8 +53,8 @@ const Highlights = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="absolute -left-4 top-0 w-1 h-full bg-orange transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
-              <h3 className="text-2xl font-bold font-poppins text-white mb-4 uppercase tracking-wide group-hover:text-orange transition-colors">
+              <div className="absolute -left-4 top-0 w-1 h-full bg-cyan-500 transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"></div>
+              <h3 className="text-2xl font-bold font-poppins text-white mb-4 uppercase tracking-wide group-hover:text-cyan-400 transition-colors">
                 {highlight.title}
               </h3>
               <p className="text-gray-400 leading-relaxed text-lg">
@@ -70,11 +70,11 @@ const Highlights = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-black border-2 border-orange border-opacity-30 p-12 lg:p-16 overflow-hidden"
+          className="relative bg-black border-2 border-cyan-500 border-opacity-30 p-12 lg:p-16 overflow-hidden"
         >
           {/* Corner Accents */}
-          <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-orange"></div>
-          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-orange"></div>
+          <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-cyan-500"></div>
+          <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-cyan-500"></div>
           
           <h3 className="text-3xl md:text-5xl font-black font-poppins text-white mb-12 text-center uppercase tracking-tight relative z-10">
             Low power, low data, <span className="gradient-text-glow">maximum performance</span>
@@ -96,11 +96,11 @@ const Highlights = () => {
                 className="text-center group cursor-default"
               >
                 <div className="relative">
-                  <div className="text-4xl md:text-6xl font-black text-orange mb-3 font-mono group-hover:text-shadow-glow transition-all">
+                  <div className="text-4xl md:text-6xl font-black text-cyan-400 mb-3 font-mono group-hover:text-shadow-glow transition-all">
                     {stat.value}
                   </div>
                   <motion.div
-                    className="h-1 bg-orange mx-auto"
+                    className="h-1 bg-cyan-500 mx-auto"
                     initial={{ width: 0 }}
                     whileInView={{ width: '60%' }}
                     transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
